@@ -1,5 +1,6 @@
 package com.dpardo.ulid;
 
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 import java.security.SecureRandom;
 import java.time.Instant;
@@ -23,7 +24,7 @@ import java.util.Objects;
  *     <li>Comparing, encoding, and formatting ULIDs</li>
  * </ul>
  */
-public class ULID implements Comparable<ULID> {
+public class ULID implements Serializable, Comparable<ULID> {
     /** SecureRandom instance for generating the random component of the ULID */
     private static final SecureRandom RANDOM = new SecureRandom();
     /** Most significant bits (timestamp) */
