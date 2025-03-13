@@ -61,7 +61,7 @@ public class ULID implements Serializable, Comparable<ULID> {
      */
     public static ULID getUlid() {
         long timestamp = Instant.now().toEpochMilli();
-        long randomPart = RANDOM.nextLong();
+        long randomPart = Math.abs(RANDOM.nextLong());
         return new ULID(timestamp, randomPart);
     }
 
@@ -84,7 +84,7 @@ public class ULID implements Serializable, Comparable<ULID> {
      */
     public static ULID fromInstant(Instant instant) {
         long timestamp = instant.toEpochMilli();
-        long randomPart = RANDOM.nextLong();
+        long randomPart = Math.abs(RANDOM.nextLong());
         return new ULID(timestamp, randomPart);
     }
 

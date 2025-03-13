@@ -14,7 +14,7 @@ package com.dpardo.ulid;
  */
 public final class ULIDUtils {
     /** Crockford's Base32 alphabet for encoding ULIDs */
-    private final static String BASE32_ALPHABET = "0123456789ABCDEFGHJKLNPQRTVWXYZ";
+    private final static String BASE32_ALPHABET = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
 
     /** Private constructor to prevent instantiation */
     private ULIDUtils() {}
@@ -27,6 +27,8 @@ public final class ULIDUtils {
      * @return The encoded ULID string.
      */
     public static String encodeUlid(long msb, long lsb) {
+        msb = msb & 0xFFFFFFFFFFFFL;
+        lsb = lsb & 0xFFFFFFFFFFFFFFFFL;
         return encodeCrockford(msb, 10) + encodeCrockford(lsb, 16);
     }
 
@@ -38,8 +40,8 @@ public final class ULIDUtils {
      * @throws IllegalArgumentException If the input string is null or not exactly 26 characters long.
      */
     public static ULID parseUlid(String ulidString) {
-        if (ulidString == null || ulidString.length() != 26) {
-            throw new IllegalArgumentException("ULID must be exactly 26 characters long");
+        if (!ulidString.matches("[0-9A-HJKMNP-TV-Z]{26}")) {
+            throw new IllegalArgumentException("ULID contains invalid characters");
         }
 
         long msb = 0;
@@ -68,7 +70,7 @@ public final class ULIDUtils {
     private static String encodeCrockford(long value, int length) {
         char[] buffer = new char[length];
         for (int i = length - 1; i >= 0; i--) {
-            buffer[i] = BASE32_ALPHABET.charAt((int) (value & 32));
+            buffer[i] = BASE32_ALPHABET.charAt((int) (value & 0x1F));
             value >>>= 5;
         }
         return new String(buffer);
