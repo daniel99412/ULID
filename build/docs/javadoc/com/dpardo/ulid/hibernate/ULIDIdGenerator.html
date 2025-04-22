@@ -94,6 +94,8 @@ loadScripts(document, 'script');</script>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ULIDIdGenerator</span>
 <span class="extends-implements">extends <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>
 implements org.hibernate.id.IdentifierGenerator</span></div>
+<div class="block">ULIDIdGenerator is a custom identifier generator for Hibernate that generates ULIDs (Universally Unique Lexicographically Sortable Identifiers).
+ This generator supports different data representations, including ULID, String, and byte[].</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -143,11 +145,15 @@ implements org.hibernate.id.IdentifierGenerator</span></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#configure(org.hibernate.type.Type,java.util.Properties,org.hibernate.service.ServiceRegistry)" class="member-name-link">configure</a><wbr>(org.hibernate.type.Type&nbsp;type,
  <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;parameters,
  org.hibernate.service.ServiceRegistry&nbsp;serviceRegistry)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Configures the ULID identifier generator based on the expected return type.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#generate(org.hibernate.engine.spi.SharedSessionContractImplementor,java.lang.Object)" class="member-name-link">generate</a><wbr>(org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Generates a new ULID identifier.</div>
+</div>
 </div>
 </div>
 </div>
@@ -198,13 +204,18 @@ implements org.hibernate.id.IdentifierGenerator</span></div>
  <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/util/Properties.html" title="class or interface in java.util" class="external-link">Properties</a>&nbsp;parameters,
  org.hibernate.service.ServiceRegistry&nbsp;serviceRegistry)</span>
                throws <span class="exceptions">org.hibernate.MappingException</span></div>
+<div class="block">Configures the ULID identifier generator based on the expected return type.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>configure</code>&nbsp;in interface&nbsp;<code>org.hibernate.id.Configurable</code></dd>
 <dt>Specified by:</dt>
 <dd><code>configure</code>&nbsp;in interface&nbsp;<code>org.hibernate.id.IdentifierGenerator</code></dd>
+<dt>Parameters:</dt>
+<dd><code>type</code> - The Hibernate type of the identifier.</dd>
+<dd><code>parameters</code> - Configuration properties for the generator.</dd>
+<dd><code>serviceRegistry</code> - The Hibernate service registry.</dd>
 <dt>Throws:</dt>
-<dd><code>org.hibernate.MappingException</code></dd>
+<dd><code>org.hibernate.MappingException</code> - If the return type is unsupported.</dd>
 </dl>
 </div>
 </section>
@@ -216,11 +227,17 @@ implements org.hibernate.id.IdentifierGenerator</span></div>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a></span>&nbsp;<span class="element-name">generate</span><wbr><span class="parameters">(org.hibernate.engine.spi.SharedSessionContractImplementor&nbsp;session,
  <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Object.html" title="class or interface in java.lang" class="external-link">Object</a>&nbsp;object)</span>
                 throws <span class="exceptions">org.hibernate.HibernateException</span></div>
+<div class="block">Generates a new ULID identifier.</div>
 <dl class="notes">
 <dt>Specified by:</dt>
 <dd><code>generate</code>&nbsp;in interface&nbsp;<code>org.hibernate.id.IdentifierGenerator</code></dd>
+<dt>Parameters:</dt>
+<dd><code>session</code> - The Hibernate session.</dd>
+<dd><code>object</code> - The entity for which the identifier is being generated.</dd>
+<dt>Returns:</dt>
+<dd>The generated ULID in the appropriate format (ULID, String, or byte[]).</dd>
 <dt>Throws:</dt>
-<dd><code>org.hibernate.HibernateException</code></dd>
+<dd><code>org.hibernate.HibernateException</code> - If an error occurs during ID generation.</dd>
 </dl>
 </div>
 </section>

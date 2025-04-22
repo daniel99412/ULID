@@ -103,6 +103,9 @@ loadScripts(document, 'script');</script>
 <hr>
 <div class="type-signature"><span class="modifiers">public class </span><span class="element-name type-name-label">ULIDTypeDescriptor</span>
 <span class="extends-implements">extends org.hibernate.type.descriptor.java.AbstractJavaType&lt;<a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a>&gt;</span></div>
+<div class="block">Hibernate type descriptor for ULID (Universally Unique Lexicographically Sortable Identifier).
+ This class defines how ULIDs are converted to and from different types (String, bytes, etc.)
+ for persistence in a Hibernate-compatible way.</div>
 <dl class="notes">
 <dt>See Also:</dt>
 <dd>
@@ -126,16 +129,24 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="ULIDTypeDescriptor.PassThroughTransformer.html" class="type-name-link" title="class in com.dpardo.ulid.hibernate">ULIDTypeDescriptor.PassThroughTransformer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Transformer that passes ULID objects through without modification.</div>
+</div>
 <div class="col-first odd-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="ULIDTypeDescriptor.StringTransformer.html" class="type-name-link" title="class in com.dpardo.ulid.hibernate">ULIDTypeDescriptor.StringTransformer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Transformer that converts ULID to and from String representation.</div>
+</div>
 <div class="col-first even-row-color"><code>static class&nbsp;</code></div>
 <div class="col-second even-row-color"><code><a href="ULIDTypeDescriptor.ToBytesTransformer.html" class="type-name-link" title="class in com.dpardo.ulid.hibernate">ULIDTypeDescriptor.ToBytesTransformer</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Transformer that converts ULID to and from byte array representation.</div>
+</div>
 <div class="col-first odd-row-color"><code>static interface&nbsp;</code></div>
 <div class="col-second odd-row-color"><code><a href="ULIDTypeDescriptor.ValueTransformer.html" class="type-name-link" title="interface in com.dpardo.ulid.hibernate">ULIDTypeDescriptor.ValueTransformer</a></code></div>
-<div class="col-last odd-row-color">&nbsp;</div>
+<div class="col-last odd-row-color">
+<div class="block">Interface for transforming ULID values into other serializable formats.</div>
+</div>
 </div>
 <div class="inherited-list">
 <h3 id="nested-classes-inherited-from-class-org.hibernate.type.descriptor.java.JavaType">Nested classes/interfaces inherited from interface&nbsp;org.hibernate.type.descriptor.java.JavaType</h3>
@@ -153,7 +164,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color"><code>static final <a href="ULIDTypeDescriptor.html" title="class in com.dpardo.ulid.hibernate">ULIDTypeDescriptor</a></code></div>
 <div class="col-second even-row-color"><code><a href="#INSTANCE" class="member-name-link">INSTANCE</a></code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Singleton instance of ULIDTypeDescriptor</div>
+</div>
 </div>
 </section>
 </li>
@@ -166,7 +179,9 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-first">Constructor</div>
 <div class="table-header col-last">Description</div>
 <div class="col-constructor-name even-row-color"><code><a href="#%3Cinit%3E()" class="member-name-link">ULIDTypeDescriptor</a>()</code></div>
-<div class="col-last even-row-color">&nbsp;</div>
+<div class="col-last even-row-color">
+<div class="block">Default constructor that specifies ULID as the target Java type.</div>
+</div>
 </div>
 </section>
 </li>
@@ -183,19 +198,27 @@ loadScripts(document, 'script');</script>
 <div class="table-header col-last">Description</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a></code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#fromString(java.lang.CharSequence)" class="member-name-link">fromString</a><wbr>(<a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;sequence)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts a CharSequence to a ULID object.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#toString(com.dpardo.ulid.ULID)" class="member-name-link">toString</a><wbr>(<a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a>&nbsp;value)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts a ULID object to its String representation.</div>
+</div>
 <div class="col-first even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;T</code></div>
 <div class="col-second even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#unwrap(com.dpardo.ulid.ULID,java.lang.Class,org.hibernate.type.descriptor.WrapperOptions)" class="member-name-link">unwrap</a><wbr>(<a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a>&nbsp;value,
  <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;type,
  org.hibernate.type.descriptor.WrapperOptions&nbsp;options)</code></div>
-<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last even-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts a ULID object to another type (e.g., String) for persistence.</div>
+</div>
 <div class="col-first odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code>&lt;T&gt;&nbsp;<a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a></code></div>
 <div class="col-second odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4"><code><a href="#wrap(T,org.hibernate.type.descriptor.WrapperOptions)" class="member-name-link">wrap</a><wbr>(T&nbsp;value,
  org.hibernate.type.descriptor.WrapperOptions&nbsp;options)</code></div>
-<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">&nbsp;</div>
+<div class="col-last odd-row-color method-summary-table method-summary-table-tab2 method-summary-table-tab4">
+<div class="block">Converts a given value into a ULID instance.</div>
+</div>
 </div>
 </div>
 </div>
@@ -227,6 +250,7 @@ loadScripts(document, 'script');</script>
 <h3>INSTANCE</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public static final</span>&nbsp;<span class="return-type"><a href="ULIDTypeDescriptor.html" title="class in com.dpardo.ulid.hibernate">ULIDTypeDescriptor</a></span>&nbsp;<span class="element-name">INSTANCE</span></div>
+<div class="block">Singleton instance of ULIDTypeDescriptor</div>
 </div>
 </section>
 </li>
@@ -243,6 +267,7 @@ loadScripts(document, 'script');</script>
 <h3>ULIDTypeDescriptor</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="element-name">ULIDTypeDescriptor</span>()</div>
+<div class="block">Default constructor that specifies ULID as the target Java type.</div>
 </div>
 </section>
 </li>
@@ -259,6 +284,13 @@ loadScripts(document, 'script');</script>
 <h3>toString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/String.html" title="class or interface in java.lang" class="external-link">String</a></span>&nbsp;<span class="element-name">toString</span><wbr><span class="parameters">(<a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a>&nbsp;value)</span></div>
+<div class="block">Converts a ULID object to its String representation.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - ULID instance</dd>
+<dt>Returns:</dt>
+<dd>String representation of the ULID, or null if the input is null</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -267,6 +299,13 @@ loadScripts(document, 'script');</script>
 <h3>fromString</h3>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a></span>&nbsp;<span class="element-name">fromString</span><wbr><span class="parameters">(<a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/CharSequence.html" title="class or interface in java.lang" class="external-link">CharSequence</a>&nbsp;sequence)</span></div>
+<div class="block">Converts a CharSequence to a ULID object.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>sequence</code> - CharSequence representing a ULID</dd>
+<dt>Returns:</dt>
+<dd>ULID instance, or null if input is null</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -277,6 +316,17 @@ loadScripts(document, 'script');</script>
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type">T</span>&nbsp;<span class="element-name">unwrap</span><wbr><span class="parameters">(<a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a>&nbsp;value,
  <a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/Class.html" title="class or interface in java.lang" class="external-link">Class</a>&lt;T&gt;&nbsp;type,
  org.hibernate.type.descriptor.WrapperOptions&nbsp;options)</span></div>
+<div class="block">Converts a ULID object to another type (e.g., String) for persistence.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - ULID instance</dd>
+<dd><code>type</code> - Target class type</dd>
+<dd><code>options</code> - Wrapper options for conversion</dd>
+<dt>Returns:</dt>
+<dd>Converted value of type T, or null if input is null</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if the type is unsupported</dd>
+</dl>
 </div>
 </section>
 </li>
@@ -286,6 +336,16 @@ loadScripts(document, 'script');</script>
 <div class="horizontal-scroll">
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="type-parameters">&lt;T&gt;</span>&nbsp;<span class="return-type"><a href="../ULID.html" title="class in com.dpardo.ulid">ULID</a></span>&nbsp;<span class="element-name">wrap</span><wbr><span class="parameters">(T&nbsp;value,
  org.hibernate.type.descriptor.WrapperOptions&nbsp;options)</span></div>
+<div class="block">Converts a given value into a ULID instance.</div>
+<dl class="notes">
+<dt>Parameters:</dt>
+<dd><code>value</code> - Object to be converted</dd>
+<dd><code>options</code> - Wrapper options for conversion</dd>
+<dt>Returns:</dt>
+<dd>ULID instance</dd>
+<dt>Throws:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/23/docs/api/java.base/java/lang/IllegalArgumentException.html" title="class or interface in java.lang" class="external-link">IllegalArgumentException</a></code> - if input type is unsupported</dd>
+</dl>
 </div>
 </section>
 </li>
