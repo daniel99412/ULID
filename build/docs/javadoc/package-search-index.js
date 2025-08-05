@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.dpardo.ulid"},{"l":"com.dpardo.ulid.hibernate"}];updateSearchResults();
