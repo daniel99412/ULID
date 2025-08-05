@@ -7,7 +7,6 @@ This library provides an implementation of **ULID (Universally Unique Lexicograp
 - 📏 Lexicographically sortable identifiers
 - 🔐 Secure random entropy
 - 🔄 Conversion between ULID and string representation
-- 🏗️ **Hibernate support** for using ULIDs as entity identifiers
 
 ## 📦 Installation
 Add the dependency to your `pom.xml` if using Maven:
@@ -50,29 +49,8 @@ String lowerUlid = ulid.toLowerCase();
 byte[] ulidBytes = ulid.toBytes();
 ```
 
-## 🎯 Hibernate Integration
-This library supports **Hibernate** for using ULIDs as entity identifiers.
-
-### 🏛️ Entity Example
-```java
-import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
-
-@Entity
-public class ULIDEntity {
-    
-    @Id
-    @GeneratedValue(generator = "ulid")
-    @GenericGenerator(name = "ulid", strategy = "com.dpardo.ulid.hibernate.ULIDIdGenerator")
-    private ULID id;
-    
-    // Other fields...
-}
-```
-
 ## 📜 License
 This project is licensed under the **GNU General Public License v3 (GPL-3.0)**.
 
 ---
-🔥 Enjoy using ULIDs in your Java applications with built-in Hibernate support! 🚀
-
+🔥 Enjoy using ULIDs in your Java applications! 🚀
