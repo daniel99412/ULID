@@ -50,7 +50,7 @@ byte[] ulidBytes = ulid.toBytes();
 ```
 
 ## 📜 License
-This project is licensed under the **GNU General Public License v3 (GPL-3.0)**.
+This project is licensed under the [**GNU General Public License v3 (GPL-3.0)**](https://github.com/daniel99412/ULID?tab=GPL-3.0-1-ov-file).
 
 ---
 🔥 Enjoy using ULIDs in your Java applications! 🚀
