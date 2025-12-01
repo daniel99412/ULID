@@ -3,7 +3,7 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.dpardo'
+group = 'io.github.daniel99412'
 version = '1.0.0'
 
 repositories {
