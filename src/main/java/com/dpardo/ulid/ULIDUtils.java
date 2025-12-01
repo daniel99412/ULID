@@ -27,8 +27,6 @@ public final class ULIDUtils {
      * @return The encoded ULID string.
      */
     public static String encodeUlid(long msb, long lsb) {
-        msb = msb & 0xFFFFFFFFFFFFL;
-        lsb = lsb & 0xFFFFFFFFFFFFFFFFL;
         return encodeCrockford(msb, 10) + encodeCrockford(lsb, 16);
     }
 
@@ -40,8 +38,14 @@ public final class ULIDUtils {
      * @throws IllegalArgumentException If the input string is null or not exactly 26 characters long.
      */
     public static ULID parseUlid(String ulidString) {
-        if (!ulidString.matches("[0-9A-HJKMNP-TV-Z]{26}")) {
-            throw new IllegalArgumentException("ULID contains invalid characters");
+        if (ulidString == null || ulidString.length() != 26) {
+            throw new IllegalArgumentException("ULID string must be 26 characters long.");
+        }
+        if (ulidString.charAt(0) > '7') {
+            throw new IllegalArgumentException("Invalid ULID string: The first character must be between 0 and 7.");
+        }
+        if (!ulidString.matches("^[0-9A-HJKMNP-TV-Z]{26}$")) {
+            throw new IllegalArgumentException("ULID contains invalid characters.");
         }
 
         long msb = 0;

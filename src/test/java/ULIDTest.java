@@ -17,7 +17,7 @@ public class ULIDTest {
     @Test
     void creaDesdeInstant() {
         Instant ahora = Instant.now();
-        ULID ulid = ULID.fromInstant(ahora);
+        ULID ulid = ULID.fromTimestamp(ahora);
         assertThat(ulid.getMostSignificantBits()).isEqualTo(ahora.toEpochMilli());
     }
 
@@ -25,20 +25,20 @@ public class ULIDTest {
     void convierteAStringYVuelve() {
         ULID ulid = ULID.getUlid();
         String texto = ulid.toString();
-        ULID parseado = ULID.fromString(texto);
+        ULID parseado = ULID.parse(texto);
         assertThat(parseado).isEqualTo(ulid);
     }
 
     @Test
     void fallaConStringInvalido() {
-        assertThatThrownBy(() -> ULID.fromString("INVALIDO"))
+        assertThatThrownBy(() -> ULID.parse("INVALIDO"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test
     void comparaCorrectamente() {
-        ULID ulid1 = ULID.fromInstant(Instant.ofEpochMilli(1000));
-        ULID ulid2 = ULID.fromInstant(Instant.ofEpochMilli(2000));
+        ULID ulid1 = ULID.fromTimestamp(Instant.ofEpochMilli(1000));
+        ULID ulid2 = ULID.fromTimestamp(Instant.ofEpochMilli(2000));
         assertThat(ulid1.compareTo(ulid2)).isLessThan(0);
         assertThat(ulid2.compareTo(ulid1)).isGreaterThan(0);
     }
