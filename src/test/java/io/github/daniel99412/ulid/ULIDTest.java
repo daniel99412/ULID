@@ -1,4 +1,6 @@
-import com.dpardo.ulid.ULID;
+package io.github.daniel99412.ulid;
+
+import io.github.daniel99412.ulid.ULID;
 import org.junit.jupiter.api.Test;
 import java.time.Instant;
 

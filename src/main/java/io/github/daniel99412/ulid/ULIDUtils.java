@@ -1,4 +1,4 @@
-package com.dpardo.ulid;
+package io.github.daniel99412.ulid;
 
 /**
  * Utility class for encoding and decoding ULIDs using a modified Base32 encoding (Crockford's Base32).

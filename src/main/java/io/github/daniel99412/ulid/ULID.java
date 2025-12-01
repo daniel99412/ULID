@@ -1,4 +1,4 @@
-package com.dpardo.ulid;
+package io.github.daniel99412.ulid;
 
 import java.io.Serializable;
 import java.nio.ByteBuffer;

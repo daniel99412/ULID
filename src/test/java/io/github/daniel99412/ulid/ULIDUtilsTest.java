@@ -1,5 +1,7 @@
-import com.dpardo.ulid.ULID;
-import com.dpardo.ulid.ULIDUtils;
+package io.github.daniel99412.ulid;
+
+import io.github.daniel99412.ulid.ULID;
+import io.github.daniel99412.ulid.ULIDUtils;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
